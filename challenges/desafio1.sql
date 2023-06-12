@@ -1,5 +1,5 @@
 -- Descomente e altere as linhas abaixo:
-
+-- startS
 -- DROP DATABASE IF EXISTS SpotifyClone;
 -- CREATE DATABASE IF NOT EXISTS SpotifyClone;
 -- CREATE TABLE SpotifyClone.tabela1(
