@@ -2,7 +2,7 @@
   "tabela_pessoas_usuarias": "users",
   "coluna_pessoas_usuarias": "user_name",
   "tabela_plano": "plans",
-  "coluna_plano": "plain_name",
+  "coluna_plano": "plan_name",
   "tabela_historico_de_reproducoes": "historic",
   "coluna_historico_de_reproducoes": "user_id",
   "tabela_seguindo_artistas": "following",
