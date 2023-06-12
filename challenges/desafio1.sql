@@ -30,6 +30,7 @@ DROP DATABASE IF EXISTS SpotifyClone;
       song_id INT AUTO_INCREMENT PRIMARY KEY,
       name VARCHAR(100) NOT NULL,
       album_id INT NOT NULL,
+      duration_seconds INT NOT NULL,
       FOREIGN KEY (album_id) REFERENCES SpotifyClone.albums(album_id)
   ) engine = InnoDB;
 
@@ -89,18 +90,18 @@ DROP DATABASE IF EXISTS SpotifyClone;
     ('Somewhere Far Beyond', 5),
     ('I Put A Spell On You', 6);
 
-  INSERT INTO SpotifyClone.songs (name, album_id)
+  INSERT INTO SpotifyClone.songs (name, album_id, duration_seconds)
   VALUES
-    ('Samba em Paris', 6),
-    ('VIRGOS GROOVE', 1),
-    ('Feeling Good', 8),
-    ('O Medo de Amar é o Medo de Ser Livre', 5),
-    ('Under Pressure', 3),
-    ('BREAK MY SOUL', 1),
-    ('Dont Stop Me Now', 2),
-    ('The Bards Song', 2),
-    ('ALIEN SUPERSTAR', 1),
-    ('Como Nossos Pais', 3);
+    ('Samba em Paris', 6, 267),
+    ('VIRGOS GROOVE', 1, 369),
+    ('Feeling Good', 8, 100),
+    ('O Medo de Amar é o Medo de Ser Livre', 5, 207),
+    ('Como Nossos Pais', 4, 105),
+    ('Under Pressure', 3, 152),
+    ('BREAK MY SOUL', 1, 279),
+    ('Dont Stop Me Now', 2, 203),
+    ('The Bards Song', 2, 244),
+    ('ALIEN SUPERSTAR', 1, 116);
 
   INSERT INTO SpotifyClone.reproduction_history (`user_id`, `song_id`)
   VALUES
@@ -111,8 +112,8 @@ DROP DATABASE IF EXISTS SpotifyClone;
     (2, 4),
     (3, 3),
     (3, 2),
-    (4, 5),
-    (5, 5),
+    (4, 1),
+    (5, 1),
     (5, 6),
     (6, 4),
     (6, 7),
