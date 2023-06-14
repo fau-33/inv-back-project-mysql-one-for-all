@@ -1,7 +1,7 @@
 SELECT
     users.user_name AS pessoa_usuaria,
     COUNT(listened_history.song_id) AS musicas_ouvidas,
-    SUM(songs.song_duration / 60) AS total_minutos
+    ROUND(SUM(songs.song_duration / 60), 2) AS total_minutos
 FROM
     users
     LEFT JOIN listened_history ON users.user_id = listened_history.user_id
