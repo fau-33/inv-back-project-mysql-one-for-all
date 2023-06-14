@@ -47,11 +47,11 @@ CREATE TABLE SpotifyClone.listened_history (
 ) engine = InnoDB;
 
 CREATE TABLE SpotifyClone.following_artists (
-	user_id INT NOT NULL,
-	artist_id INT,
-	CONSTRAINT PRIMARY KEY (user_id, artist_id),
-	FOREIGN KEY (user_id) REFERENCES SpotifyClone.users (user_id),
-	FOREIGN KEY (artist_id) REFERENCES SpotifyClone.artists (artist_id)
+	user_id INT,
+    artist_id INT,
+    FOREIGN KEY (user_id) REFERENCES users (user_id),
+    FOREIGN KEY (artist_id) REFERENCES artists (artist_id),
+    PRIMARY KEY (user_id, artist_id)
 ) engine = InnoDB;
 
 INSERT INTO SpotifyClone.plans_types (plans_type, plans_value)
@@ -107,7 +107,7 @@ VALUES
 	("'The Bard's Song'", '244', '7'),
 	("'Feeling Good'", '100', '8');
 
-INSERT INTO SpotifyClone.listened_history (user_id, song_id, listened_history_date)
+INSERT INTO SpotifyClone.History (user_id, song_id, listened_history_date)
 VALUES
 	('1', '8', '2022-02-28 10:45:55'),
 	('1', '2', '2020-05-02 05:30:35'),
@@ -128,20 +128,36 @@ VALUES
 
 INSERT INTO SpotifyClone.following_artists (user_id, artist_id)
 VALUES
-	('1', '1'),
-	('1', '2'),
-	('1', '3'),
-	('2', '1'),
-	('2', '3'),
-	('3', '2'),
-	('4', '4'),
-	('5', '5'),
-	('5', '6'),
-	('6', '6'),
-	('6', '1'),
-	('7', '6'),
-	('9', '3'),
-	('10', '2');	
+	(1, 1),
+    (1, 6),
+    (1, 4),
+    (2, 1),
+    (2, 4),
+    (3, 3),
+    (3, 1),
+    (4, 6),
+    (5, 2),
+    (5, 5),
+    (6, 5),
+    (6, 4),
+    (6, 1),
+    (7, 3),
+    (7, 2),
+    (8, 1),
+    (8, 2),
+    (9, 5),
+    (9, 6),
+    (9, 4),
+    (10, 3),
+    (10, 5);
+
+
+
+
+
+
+
+
 
 
 
